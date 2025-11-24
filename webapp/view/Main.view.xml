@@ -1,15 +1,28 @@
 <mvc:View
     controllerName="userdetails.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
 
     <Page title="Click to Add User Information">
         <content>
-            <Button
-                text="Add User"
-                type="Emphasized"
-                press=".onOpenAddUserDialog"
-                class="sapUiSmallMarginBottom" />
+
+           <Toolbar class="sapUiSmallMarginBottom">
+            <Button 
+                text="Add User" 
+                type="Emphasized" 
+                press=".onOpenAddUserDialog" />
+
+            <ToolbarSpacer />
+
+            <!-- Filter/Search Bar -->
+            <SearchField 
+                id="searchField"
+                width="200px"
+                liveChange=".onSearch"
+                placeholder="Search users..." />
+
+        </Toolbar>
 
             <Table
                 id="userTable"
