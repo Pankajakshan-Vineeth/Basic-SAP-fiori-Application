@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="userdetails.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page title="Click to Add User Information">
+        <content>
+            <Button
+                text="Add User"
+                type="Emphasized"
+                press=".onOpenAddUserDialog"
+                class="sapUiSmallMarginBottom" />
+
+            <Table
+                id="userTable"
+                class="sapUiSmallMarginTop"
+                inset="false"
+                items="{ path: 'userModel>/users' }">
+
+                <headerToolbar>
+                    <Toolbar>
+                        <Title text="Submitted User Details" level="H3" />
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column><Text text="User Name" /></Column>
+                    <Column><Text text="Mobile No" /></Column>
+                    <Column><Text text="Email" /></Column>
+                    <Column><Text text="Action" /></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{userModel>name}" />
+                            <Text text="{userModel>mobile}" />
+                            <Text text="{userModel>email}" />
+
+                            <Button text="Delete" type="Reject" press="onDelete" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="addUserDialog"
+        title="Add User Details"
+        draggable="true"
+        resizable="true">
+
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <Label text="User Name :" />
+                <!-- 🔹 Validate name on blur (change event) -->
+                <Input
+                    id="nameInput"
+                    placeholder="Enter your name..."
+                    width="300px"
+                    change=".onNameChange" 
+                    required="true"/>
+
+                <Label text="Mobile No :" class="sapUiSmallMarginTop" />
+                <!-- 🔹 Validate mobile on blur -->
+                <Input
+                    id="mobileInput"
+                    type="Number"
+                    placeholder="Enter your Mobile No..."
+                    width="300px"
+                    change=".onMobileChange" />
+
+                <Label text="Email :" class="sapUiSmallMarginTop" />
+                <Input
+                    id="emailInput"
+                    placeholder="Enter your email..."
+                    width="300px" />
+            </VBox>
+        </content>
+
+        <beginButton>
+            <Button text="Submit" type="Emphasized" press=".onSubmit" />
+        </beginButton>
+
+        <endButton>
+            <Button text="Cancel" press=".onCancel" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
